@@ -9,29 +9,42 @@
 
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Define the marquee animation */
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
 
+        /* Apply the animation to the marquee class */
+        .marquee {
+            display: inline-block;
+            white-space: nowrap;
+            animation: marquee 10s linear infinite;
+        }
+    </style>
 </head>
 <body class="bg-[#F2F2F2]">
     <header>
-        <section class="navigation h-[100px] bg-white flex px-[60px] items-center justify-between">
+        <section class="navigation h-[100px] bg-white flex xl:px-[60px] px-3  items-center justify-between">
             <div class="logo flex items-center gap-2">
                 <img class="h-[50px] w-[50px]" src="assets/logo.png" alt="">
                 <h2 class="logo-name font-extrabold text-[#006747]  text-[24px]">Emergency <br> Service</h2>
             </div>
             <ul class="flex gap-[20px] text-[20px]">
-                <li class="flex gap-1 px-[30px] py-[14px] font-bold rounded-[50px] bg-[#41FF6B1A] "><span id="heart-count">0 </span> <img class="h-7" src="assets/heart.png" alt=""></li>
+                <li class="gap-1 px-[30px] py-[14px] font-bold rounded-[50px] bg-[#41FF6B1A] hidden xl:flex "><span id="heart-count">0 </span> <img class="h-7" src="assets/heart.png" alt=""></li>
                 <li class="flex gap-1 px-[20px] py-[14px] rounded-[50px] font-bold bg-[#41FF6B1A] "> <span id="coin-count">100 </span> <img class="h-6" src="assets/coin.png" alt=""></li>
-                <li class="px-[30px] gap-1 py-[14px] rounded-[50px] bg-[#00A63E] text-white" > <span id="copy-count">0</span> Copy</li>
+                <li class="px-[30px] gap-1 py-[14px] rounded-[50px] bg-[#00A63E] text-white hidden xl:flex"  > <span id="copy-count">0</span> Copy</li>
             </ul>
         </section>
         <section class="banner bg-[linear-gradient(to_right,rgba(1,50,35,1)_0%,rgba(0,103,71,1)_50%,rgba(1,50,35,1)_100%)] h-60 flex flex-col  items-center
  ">
             <div class="p-2 mt-[10px]"><img class="h-[96px]" src="assets/logo-dark.png" alt=""></div>
-            <h3 class="text-[40px] text-white">Emergency Service Directory</h3>
-            <p class="text-[20px] font-semibold text-white">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
+            <h3 class="text-[40px] text-white text-center">Emergency Service Directory</h3>
+            <p class="text-[20px] font-semibold text-white hidden xl:block ">Government Emergency Services at Your Fingertip – A Project by  Government of the People’s Republic of Bangladesh</p>
         </section>
     </header>
-    <main class="m-15 mb-0 pb-16 flex flex-col md:flex-row justify-between gap-4 relative">
+    <main class=" m-3 xl:m-15 mb-0 xl:mb-0 pb-16 flex flex-col md:flex-row justify-between gap-4 relative">
         <section class="card-section grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
             <div class="card bg-white rounded-[16px] w-full ">
                 <div class="flex items-center justify-between  ">
@@ -239,11 +252,11 @@
 
                 <div class="flex gap-2 mt-auto pt-3">
                     <button class="btn btn-neutral btn-outline text-gray-500 hover:bg-gray-100 flex1 border-gray-500 flex-1" data-target="text-9"><i class="fa fa-copy"></i> Copy</button>
-                    <button class="btn btn-neutral hover:bg-green-400 btn-call btn-call btn-outline bg-[#00A63E] flex-1 text-white"> Clear</button>
+                    <button class="btn btn-neutral hover:bg-green-400 btn-call btn-outline bg-[#00A63E] flex-1 text-white"> <i class="fa fa-phone"></i> Call</button>
                 </div>
             </div>
         </section>
-        <section class="history-section w-100 p-4 bg-white flex flex-col gap-[15px] rounded-xl inset-0">
+        <section class="history-section w-full xl:w-100 p-4 bg-white flex flex-col gap-[15px] rounded-xl inset-0">
             <div class="history-top flex justify-between">
                 <div class="flex items-center gap-2 text-[25px]">
                     <i class="fa-regular fa-clock "></i>
